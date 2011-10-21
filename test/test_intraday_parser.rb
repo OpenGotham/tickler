@@ -5,7 +5,7 @@ class TestIntradayParser < MiniTest::Unit::TestCase
     IntradayDocument.destroy_all
     @groper = Groper.new
     filename = File.expand_path(File.join('..','fixtures','Estimize_Intraday_A.xml'), __FILE__)
-    @groper.parse(filename)
+    @groper.parse(IntradayParser, filename)
   end
 
   def test_record_stored_on_parse

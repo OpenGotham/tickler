@@ -14,8 +14,9 @@ class Groper
     File.unlink(filename)
   end
 
-  def parse(filename)
-    parser = Nokogiri::XML::SAX::Parser.new(IntradayParser.new)
+  def parse(klass, filename)
+    raise "Unknown parser!" unless [IntradayParser, DailyParser].include?(klass)
+    parser = Nokogiri::XML::SAX::Parser.new(klass.new)
     parser.parse(File.read(filename))
   end
 end

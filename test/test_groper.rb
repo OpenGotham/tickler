@@ -9,9 +9,10 @@ class TestGroper < MiniTest::Unit::TestCase
     assert_equal "Estimizer.xml", @groper.url
   end
 
+  # just make sure that something happens
   def test_parsing_xml
     filename = File.expand_path(File.join('..','fixtures','Estimize_Intraday_A.xml'), __FILE__)
-    @groper.parse(filename)
+    @groper.parse(IntradayParser, filename)
     assert true
   end
 end
