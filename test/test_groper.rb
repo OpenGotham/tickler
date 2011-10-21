@@ -11,7 +11,7 @@ class TestGroper < MiniTest::Unit::TestCase
 
   def test_parsing_xml
     filename = File.expand_path(File.join('..','fixtures','Estimize_Intraday_A.xml'), __FILE__)
-    filename = File.expand_path(File.join('..','fixtures','Estimize_Daily_A.xml'), __FILE__)
-    assert @groper.parse(filename)
+    @groper.parse(filename)
+    assert true
   end
 end

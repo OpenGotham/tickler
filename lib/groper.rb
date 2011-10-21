@@ -15,8 +15,7 @@ class Groper
   end
 
   def parse(filename)
-    Nokogiri::XML::Reader(File.open(filename,'r'){|f| f.read}).each do |node|
-#      puts node.name
-    end
+    parser = Nokogiri::XML::SAX::Parser.new(IntradayParser.new)
+    parser.parse(File.read(filename))
   end
 end
