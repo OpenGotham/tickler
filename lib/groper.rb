@@ -1,16 +1,23 @@
 require 'nokogiri'
 
 class Groper
-  attr_reader :url
+  attr_reader :urls
 
   def initialize
-    @url = "Estimizer.xml"
+    @urls = ["Estimizer_Daily_A.xml","Estimizer_Intraday_A.xml"]
   end
 
   def perform
+    # file 1
     filename = File.expand_path(File.join('..','..','tmp',Time.now.strftime("%Y%d%m%H%M%L.xml")), __FILE__)
-    `wget -O #{filename} #{self.url}`
-    store(filename)
+    `wget -O #{filename} #{self.urls[0]}`
+    parse(IntradayParser, filename)
+    File.unlink(filename)
+
+    # file 2
+    filename = File.expand_path(File.join('..','..','tmp',Time.now.strftime("%Y%d%m%H%M%L.xml")), __FILE__)
+    `wget -O #{filename} #{self.url[1]}`
+    parse(DailyParser, filename)
     File.unlink(filename)
   end
 

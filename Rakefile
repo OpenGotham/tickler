@@ -17,3 +17,8 @@ Rake::TestTask.new(:test) do |test|
 end
 
 task :default => :test
+
+task :start do
+  require File.expand_path('../lib/tickler', __FILE__)
+end
+

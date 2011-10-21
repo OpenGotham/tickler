@@ -6,7 +6,7 @@ class TestGroper < MiniTest::Unit::TestCase
   end
 
   def test_url
-    assert_equal "Estimizer.xml", @groper.url
+    assert @groper.urls.is_a?(Array)
   end
 
   # just make sure that something happens
