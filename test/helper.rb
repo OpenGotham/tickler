@@ -15,5 +15,7 @@ require File.expand_path('../../lib/daily_document', __FILE__)
 require File.expand_path('../../lib/daily_parser', __FILE__)
 require File.expand_path('../../lib/funny_bone', __FILE__)
 require File.expand_path('../../lib/groper', __FILE__)
+require File.expand_path('../../lib/instrument_document', __FILE__)
+require File.expand_path('../../lib/string/fiscal_quarter', __FILE__)
 
 MiniTest::Unit.autorun
