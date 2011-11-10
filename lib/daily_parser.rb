@@ -11,7 +11,7 @@ class DailyParser < Nokogiri::XML::SAX::Document
   # write the document to the database
   def end_element(name)
     if name == 'RecordDetails'
-      @record = DailyDocument.create_from_array(@document)
+      @record = InstrumentDocument.save_from_array(@document)
       @document = nil
     end
   end

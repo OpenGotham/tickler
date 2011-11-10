@@ -1,13 +1,3 @@
-=begin
-<CompanyName>Alliance Financial Corp</CompanyName>
-<EPSQuarterly1>0.66</EPSQuarterly1>
-<EPSQuarterly2>0.73</EPSQuarterly2>
-<EPSQuarterly3>0.70</EPSQuarterly3>
-<EPSQuarterly4>0.59</EPSQuarterly4>
-<EPSQuarterly5>0.66</EPSQuarterly5>
-<EPSQuarterly6>0.64</EPSQuarterly6>
-<EPSQuarterly7>0.59</EPSQuarterly7>LatestFiscalQTR>3</LatestFiscalQTR><LatestFiscalYear
-=end
 require File.expand_path('../helper', __FILE__)
 
 class TestInstrumentDocument < MiniTest::Unit::TestCase

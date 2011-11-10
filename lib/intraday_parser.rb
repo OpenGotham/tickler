@@ -11,19 +11,7 @@ class IntradayParser < Nokogiri::XML::SAX::Document
   # write the document to the database
   def end_element(name)
     if name == 'RecordDetails'
-      @record = IntradayDocument.new
-      @record.body = {}
-      @document.each do |pair|
-        case pair[0]
-        when 'Symbol'
-          @record.symbol = pair[1]
-        when 'CompanyName'
-          @record.company_name = pair[1]
-        else
-          @record.body[pair[0].to_sym] = pair[1]
-        end
-      end
-      @record.save
+      @record = InstrumentDocument.save_from_array(@document)
       @document = nil
     end
   end
